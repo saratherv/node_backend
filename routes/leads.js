@@ -33,7 +33,7 @@ router.route('/add').post((req, res) => {
 
   newLead.save()
     .then(() => res.end(JSON.stringify({"success" : true, "code" : 200, "message" : "Lead Added Successfully"})))
-    .catch(err => res.end(JSON.stringify({"success" : false, "code" : 400, "message" : err})));
+    .catch(err => res.end(JSON.stringify({"success" : false, "code" : 400, "message" : err.message})));
 });
 
 module.exports = router;
